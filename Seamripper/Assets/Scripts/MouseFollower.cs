@@ -9,6 +9,8 @@ public class MouseFollower : MonoBehaviour
     Vector3 mousePosition;
     Mouse currentMouse;
     public GameObject bulletPrefab;
+    public GameObject meleePrefab;
+    public GameObject spawnedMeleePrefab;
     public GameObject playerGO;
     public Camera mainCam;
 
@@ -30,6 +32,12 @@ public class MouseFollower : MonoBehaviour
         if (currentMouse.leftButton.wasPressedThisFrame)
         {
             Instantiate(bulletPrefab, playerGO.transform.position, playerGO.transform.rotation);
+        }
+
+        if (currentMouse.rightButton.wasPressedThisFrame)
+        {
+            spawnedMeleePrefab = Instantiate(meleePrefab, playerGO.transform.position, playerGO.transform.rotation);
+            spawnedMeleePrefab.transform.SetParent(playerGO.transform);
         }
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7194543478386796305}
   - component: {fileID: 6974151361014478582}
   m_Layer: 3
-  m_Name: Bullet
+  m_Name: BulletPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,5 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletBehavior
   bulletLifetime: 2
-  bulletSpeed: 750
+  bulletSpeed: 2000
   bulletRb: {fileID: 7194543478386796305}
+  bulletDeath: {fileID: 1789302133645393580, guid: 4f232ce5d9a8774409b803d661a7048b, type: 3}
