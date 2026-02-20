@@ -10,9 +10,11 @@ public class MouseFollower : MonoBehaviour
     Mouse currentMouse;
     public GameObject bulletPrefab;
     public GameObject meleePrefab;
-    public GameObject spawnedMeleePrefab;
     public GameObject playerGO;
     public Camera mainCam;
+    public MeleeWeapon meleeWeaponType;
+    public RangedWeapon rangedWeaponType;
+
 
     public void Start()
     {
@@ -28,16 +30,13 @@ public class MouseFollower : MonoBehaviour
         mousePosition = mainCam.ScreenToWorldPoint(mousePosition);
         transform.position = Vector3.Lerp(transform.position, mousePosition, lerpSpeed * Time.deltaTime);
         
-        //Detects for mouse click
-        if (currentMouse.leftButton.wasPressedThisFrame)
-        {
-            Instantiate(bulletPrefab, playerGO.transform.position, playerGO.transform.rotation);
-        }
 
-        if (currentMouse.rightButton.wasPressedThisFrame)
-        {
-            spawnedMeleePrefab = Instantiate(meleePrefab, playerGO.transform.position, playerGO.transform.rotation);
-            spawnedMeleePrefab.transform.SetParent(playerGO.transform);
-        }
+
+        //if (currentMouse.rightButton.wasPressedThisFrame)
+        //{
+        //    var slash = Instantiate(meleePrefab, playerGO.transform.position, playerGO.transform.rotation);
+        //    slash.transform.SetParent(playerGO.transform);
+
+        //}
     }
 }

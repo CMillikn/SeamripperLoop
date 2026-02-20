@@ -10,6 +10,7 @@ public class BulletBehavior : MonoBehaviour
     public Rigidbody bulletRb;
     public GameObject bulletDeath;
     EnemyScript enemyTag;
+    public RangedWeapon WeaponType { get;  set; }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,7 +21,7 @@ public class BulletBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bulletRb.linearVelocity = transform.forward * (bulletSpeed * Time.deltaTime);
+        bulletRb.linearVelocity = transform.forward * ((WeaponType.bulletSpeed * Time.deltaTime)*100);
     }
 
     private void OnCollisionEnter(Collision col)
@@ -38,7 +39,7 @@ public class BulletBehavior : MonoBehaviour
     IEnumerator SelfDestruct()
     {
 
-        yield return new WaitForSeconds(bulletLifetime);
+        yield return new WaitForSeconds(WeaponType.weaponRange);
         Instantiate(bulletDeath, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

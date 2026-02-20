@@ -3,6 +3,7 @@ using UnityEngine;
 public class MeleeBehavior : MonoBehaviour
 {
     EnemyScript enemyTag;
+    public MeleeWeapon weaponType;
 
     void Start()
     {
