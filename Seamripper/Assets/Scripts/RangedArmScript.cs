@@ -34,7 +34,7 @@ public class RangedArmScript : MonoBehaviour
         reloaded = false;
         for (int i = 0; i < rangedWeaponType.weaponBurst; i++)
         {
-            var projectile = Instantiate(bulletPrefab, playerGO.transform.position, playerGO.transform.rotation);
+            var projectile = Instantiate(rangedWeaponType.weaponAttackObject, playerGO.transform.position, playerGO.transform.rotation);
             projectile.GetComponent<BulletBehavior>().WeaponType = rangedWeaponType;
             yield return new WaitForSeconds(rangedWeaponType.weaponBurstDowntime);
         }

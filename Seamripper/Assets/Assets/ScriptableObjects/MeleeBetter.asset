@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e97ad4be415a194dbdf647666bd3595, type: 3}
   m_Name: MeleeBetter
   m_EditorClassIdentifier: Assembly-CSharp::MeleeWeapon
-  weaponName: 
-  weaponBurst: 0
-  weaponDamage: 0
-  weaponDowntime: 0
-  weaponDurability: 0
-  weaponRange: 0
-  weaponAttackObject: {fileID: 0}
+  weaponName: Better Melee
+  weaponBurst: 3
+  weaponDamage: 10
+  weaponDowntime: 0.5
+  weaponDurability: 5
+  weaponRange: 3
+  weaponAttackObject: {fileID: 8265774263698634304, guid: 32083e3e7b16d704f9c9e4f53f9089ad, type: 3}

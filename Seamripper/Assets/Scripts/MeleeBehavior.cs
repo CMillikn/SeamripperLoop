@@ -3,11 +3,11 @@ using UnityEngine;
 public class MeleeBehavior : MonoBehaviour
 {
     EnemyScript enemyTag;
-    public MeleeWeapon weaponType;
+    public MeleeWeapon WeaponType { get; set; }
 
-    void Start()
+    private void Update()
     {
-        
+        //this.transform.localScale = new Vector3(WeaponType.weaponRange, WeaponType.weaponRange, WeaponType.weaponRange);
     }
 
     // Update is called once per frame

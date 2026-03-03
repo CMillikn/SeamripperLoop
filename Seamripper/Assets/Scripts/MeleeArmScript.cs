@@ -19,7 +19,7 @@ public class MeleeArmScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentMouse.leftButton.wasPressedThisFrame)
+        if (currentMouse.rightButton.wasPressedThisFrame)
         {
             if (balanced)
             {
@@ -32,7 +32,8 @@ public class MeleeArmScript : MonoBehaviour
     {
         balanced = false;
         var projectile = Instantiate(meleeWeaponType.weaponAttackObject, playerGO.transform.position, playerGO.transform.rotation);
-        projectile.GetComponent<MeleeBehavior>().weaponType = meleeWeaponType;
+        projectile.GetComponent<MeleeBehavior>().WeaponType = meleeWeaponType;
+        projectile.transform.localScale = new Vector3(meleeWeaponType.weaponRange, meleeWeaponType.weaponRange, meleeWeaponType.weaponRange);
         yield return new WaitForSeconds(meleeWeaponType.weaponDowntime);
         balanced = true;
     }
