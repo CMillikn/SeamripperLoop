@@ -1,26 +1,24 @@
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-
-
-public class BulletBehavior : MonoBehaviour
+using System.Collections;
+public class ShotgunScript : MonoBehaviour
 {
     public float bulletLifetime;
     public float bulletSpeed;
     public Rigidbody bulletRb;
     public GameObject bulletDeath;
     EnemyScript enemyTag;
-    public RangedWeapon WeaponType { get;  set; }
-    
+    public RangedWeapon WeaponType { get; set; }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        this.transform.localEulerAngles = new Vector3 (0f, this.transform.localEulerAngles.y + Random.Range(-15,15), 0f);
         StartCoroutine(SelfDestruct());
     }
 
     void Update()
     {
-        bulletRb.linearVelocity = transform.forward * ((WeaponType.bulletSpeed * Time.deltaTime)*100);
+        bulletRb.linearVelocity = transform.forward * ((WeaponType.bulletSpeed * Time.deltaTime) * 100);
     }
 
     private void OnCollisionEnter(Collision col)
@@ -46,9 +44,9 @@ public class BulletBehavior : MonoBehaviour
     IEnumerator HitThing()
     {
 
-            Instantiate(bulletDeath, this.transform.position, Quaternion.identity);
-            yield return null;
-            Destroy(gameObject);
-        
+        Instantiate(bulletDeath, this.transform.position, Quaternion.identity);
+        yield return null;
+        Destroy(gameObject);
+
     }
 }

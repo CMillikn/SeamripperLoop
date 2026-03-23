@@ -17,7 +17,7 @@ MonoBehaviour:
   weaponDamage: 2
   weaponBurstDowntime: 0
   weaponDowntime: 0.35
-  weaponDurability: 3
+  weaponDurability: 10
   bulletSpeed: 20
   weaponRicochet: 0
   weaponHitscan: 0

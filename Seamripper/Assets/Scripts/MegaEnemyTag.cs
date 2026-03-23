@@ -1,15 +1,20 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class MegaEnemyTag : MonoBehaviour
 {
     public float enemyHealth;
     public float enemySpeed;
     public bool isHurt;
     public GameObject playerObject;
     public Rigidbody rb;
+    //1 is melee, 2 is ranged, 3 is walk, 4 is dash
+    public int currentLimb;
+
     void Start()
     {
+        currentLimb = Random.Range(1, 5);
         playerObject = GameManager.Instance.playerObject;
         rb = GetComponent<Rigidbody>();
     }
@@ -21,9 +26,27 @@ public class EnemyScript : MonoBehaviour
         {
             if (!isHurt)
             {
+                //Movement stuff
                 Vector3 moveDirection = new Vector3(playerObject.transform.position.x, this.transform.position.y, playerObject.transform.position.z);
                 transform.LookAt(moveDirection);
                 rb.linearVelocity = transform.forward * (enemySpeed * Time.deltaTime);
+
+                if (currentLimb == 1)
+                {
+
+                }
+                else if (currentLimb == 2)
+                {
+
+                }
+                else if (currentLimb == 3)
+                {
+
+                }
+                else
+                {
+
+                }
             }
         }
     }

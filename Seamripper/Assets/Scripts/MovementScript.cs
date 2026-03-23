@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,11 +14,21 @@ public class MovementScript : MonoBehaviour
     public float thisSpeed;
     //Dash speeds
     public float dashTime;
-    public float dashSpeed;
+
     bool isDashing;
     public float currentSpeed;
+
+
+    public float headbangSpeed;
+    bool isHeadbanging;
+    public float headbangStartup;
+    public float headbangCooldown;
+    public GameObject headbangObject;
+    public GameObject bodyParts;
+    GameObject instancedHeadbangGO;
+
+
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
@@ -26,60 +37,36 @@ public class MovementScript : MonoBehaviour
     }
 
     
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        if (instancedHeadbangGO != null)
+        {
+            instancedHeadbangGO.transform.position = playerObject.transform.position;
+            instancedHeadbangGO.transform.localEulerAngles = playerObject.transform.localEulerAngles;
+        }
         
-        playerObject.transform.LookAt(new Vector3(aimingObject.transform.position.x, playerObject.transform.position.y, aimingObject.transform.position.z));
-        currentSpeed = _thisRb.linearVelocity.magnitude;
-        if (isDashing)
+        if (isHeadbanging == false)
         {
-            //if ((_thisRb.linearVelocity.magnitude > dashSpeed) || (_thisRb.linearVelocity.magnitude < dashSpeed))
-            //{
-            //    _thisRb.linearVelocity = Vector3.zero;
-
-            //}
-
-        }
-        else
-        {
-            if (_thisRb.linearVelocity.magnitude > thisSpeed)
-            {
-                _thisRb.linearVelocity = Vector3.ClampMagnitude(_thisRb.linearVelocity, thisSpeed);
-            }
-            if (_thisKb.wKey.isPressed)
-            {
-                _thisRb.linearVelocity = new Vector3(_thisRb.linearVelocity.x, 0, (_thisRb.linearVelocity.z + thisAccel * Time.deltaTime));
-            }
-    
-            if (_thisKb.sKey.isPressed)
-            {
-                _thisRb.linearVelocity = new Vector3(_thisRb.linearVelocity.x, 0, (_thisRb.linearVelocity.z - thisAccel * Time.deltaTime));
-            }
-    
-            if (_thisKb.aKey.isPressed)
-            {
-                _thisRb.linearVelocity = new Vector3((_thisRb.linearVelocity.x - thisAccel * Time.deltaTime), 0, _thisRb.linearVelocity.z);
-            }
-            
-            if (_thisKb.dKey.isPressed)
-            {
-                _thisRb.linearVelocity = new Vector3((_thisRb.linearVelocity.x + thisAccel * Time.deltaTime), 0, _thisRb.linearVelocity.z);
-            }
-
-            if ((_thisKb.shiftKey.isPressed) && (!isDashing))
-            {
-                StartCoroutine(DashCoroutine());
-            }
+            playerObject.transform.LookAt(new Vector3(aimingObject.transform.position.x, playerObject.transform.position.y, aimingObject.transform.position.z));
         }
 
-        IEnumerator DashCoroutine()
+        if (isHeadbanging == false && _thisKb.spaceKey.wasPressedThisFrame)
         {
-            isDashing = true;
+            StartCoroutine(HeadbangCoroutine());
+        }
+
+        IEnumerator HeadbangCoroutine()
+        {
+            isHeadbanging = true;
+            bodyParts.SetActive(false);
+            yield return new WaitForSeconds(headbangStartup);
+            instancedHeadbangGO = Instantiate(headbangObject, playerObject.transform.position, Quaternion.identity);
             Vector3 dashDirection = dashObject.transform.position - playerObject.transform.position;
-            _thisRb.AddForce(dashDirection * dashSpeed, ForceMode.Impulse);
-            yield return new WaitForSeconds(dashTime);
-            isDashing = false;
+            _thisRb.AddForce(dashDirection * headbangSpeed, ForceMode.Impulse);
+            yield return new WaitForSeconds(headbangCooldown);
+            bodyParts.SetActive(true);
+            isHeadbanging = false;
+            GameManager.Instance.playerBodyManager.ReloadEverything();
         }
     }
 }

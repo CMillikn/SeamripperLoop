@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e97ad4be415a194dbdf647666bd3595, type: 3}
-  m_Name: MeleeBetter
+  m_Name: MeleeSpear
   m_EditorClassIdentifier: Assembly-CSharp::MeleeWeapon
-  weaponName: Better Melee
-  weaponBurst: 3
-  weaponDamage: 10
-  weaponDowntime: 0.5
-  weaponDurability: 5
-  weaponRange: 3
-  weaponAttackObject: {fileID: 8265774263698634304, guid: 32083e3e7b16d704f9c9e4f53f9089ad, type: 3}
+  weaponName: Spear
+  weaponBurst: 1
+  weaponDamage: 20
+  weaponDowntime: 1
+  weaponDurability: 3
+  weaponRange: 2
+  weaponAttackObject: {fileID: 8265774263698634304, guid: 99fed9fa60d6ada4cb3e995b074eb02b, type: 3}

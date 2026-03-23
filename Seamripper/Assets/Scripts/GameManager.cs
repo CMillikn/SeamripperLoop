@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
     public PlayerBodyManager playerBodyManager;
+    public GameObject playerObject;
     public static GameManager Instance
     {
         get

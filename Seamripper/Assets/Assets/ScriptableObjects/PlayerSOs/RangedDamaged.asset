@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f90bbc34dcedd44eb51cad9545fb422, type: 3}
-  m_Name: RangedBetter
+  m_Name: RangedDamaged
   m_EditorClassIdentifier: Assembly-CSharp::RangedWeapon
-  weaponName: Better Pistol
-  weaponBurst: 3
-  weaponDamage: 10
-  weaponBurstDowntime: 0.1
-  weaponDowntime: 0.4
-  weaponDurability: 5
-  bulletSpeed: 50
-  weaponRicochet: 1
+  weaponName: Damaged Fallback Arm
+  weaponBurst: 1
+  weaponDamage: 1
+  weaponBurstDowntime: 0
+  weaponDowntime: 0.5
+  weaponDurability: 999999
+  bulletSpeed: 20
+  weaponRicochet: 0
   weaponHitscan: 0
   weaponRange: 2
   weaponAttackObject: {fileID: 4348861124752376055, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
