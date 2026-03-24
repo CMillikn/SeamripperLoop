@@ -26,15 +26,15 @@ public class HeadbangBehavior : MonoBehaviour
         {
             if (!headbangCooldown)
             {
-                if (minibossTag.currentLimb == 1)
+                if (minibossTag.currentLimb == MegaEnemyTag.limbType.melee)
                 {
 
                 }
-                else if (minibossTag.currentLimb == 2)
+                else if (minibossTag.currentLimb == MegaEnemyTag.limbType.ranged)
                 {
 
                 }
-                else if (minibossTag.currentLimb == 3)
+                else if (minibossTag.currentLimb == MegaEnemyTag.limbType.walk)
                 {
 
                 }

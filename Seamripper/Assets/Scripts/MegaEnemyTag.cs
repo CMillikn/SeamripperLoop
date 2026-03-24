@@ -10,14 +10,48 @@ public class MegaEnemyTag : MonoBehaviour
     public GameObject playerObject;
     public Rigidbody rb;
     //1 is melee, 2 is ranged, 3 is walk, 4 is dash
-    public int currentLimb;
+    public enum limbType
+    {
+        melee,
+        ranged,
+        walk,
+        dash,
+    }
+    public limbType currentLimb;
+    public int typeOfLimb;
 
     void Start()
     {
-        currentLimb = Random.Range(1, 5);
+        int randomIndex = Random.Range(1, 5);
+        if (randomIndex == 1)
+        {
+            currentLimb = limbType.melee;
+            typeOfLimb = Random.Range(2, 5);
+            if (typeOfLimb == 2)
+            {
+
+            }
+        }
+        else if (randomIndex == 2)
+        {
+            currentLimb = limbType.ranged;
+            typeOfLimb = Random.Range(2, 5);
+        }
+        else if (randomIndex == 3)
+        {
+            currentLimb = limbType.walk;
+            typeOfLimb = 2;
+        }
+        else
+        {
+            currentLimb = limbType.dash;
+            typeOfLimb = Random.Range(2, 5);
+        }
         playerObject = GameManager.Instance.playerObject;
         rb = GetComponent<Rigidbody>();
+
     }
+
 
     // Update is called once per frame
     void Update()
@@ -31,22 +65,7 @@ public class MegaEnemyTag : MonoBehaviour
                 transform.LookAt(moveDirection);
                 rb.linearVelocity = transform.forward * (enemySpeed * Time.deltaTime);
 
-                if (currentLimb == 1)
-                {
 
-                }
-                else if (currentLimb == 2)
-                {
-
-                }
-                else if (currentLimb == 3)
-                {
-
-                }
-                else
-                {
-
-                }
             }
         }
     }
