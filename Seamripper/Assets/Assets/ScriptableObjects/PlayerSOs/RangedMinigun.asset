@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedWeapon
   weaponName: Minigun
   weaponBurst: 1
-  weaponDamage: 0.6
+  weaponDamage: 10
   weaponBurstDowntime: 0
   weaponDowntime: 0.05
   weaponDurability: 3

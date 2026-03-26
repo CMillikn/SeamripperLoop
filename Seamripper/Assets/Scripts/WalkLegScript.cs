@@ -20,7 +20,7 @@ public class WalkLegScript : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         float thisSpeed = walkWeaponType.walkSpeed;
         float thisAccel = walkWeaponType.walkAccel;
@@ -42,22 +42,22 @@ public class WalkLegScript : MonoBehaviour
             }
             if (_thisKb.wKey.isPressed)
             {
-                _thisRb.linearVelocity = new Vector3(_thisRb.linearVelocity.x, 0, (_thisRb.linearVelocity.z + thisAccel * Time.deltaTime));
+                _thisRb.linearVelocity = new Vector3(_thisRb.linearVelocity.x, 0, (_thisRb.linearVelocity.z + thisAccel));
             }
 
             if (_thisKb.sKey.isPressed)
             {
-                _thisRb.linearVelocity = new Vector3(_thisRb.linearVelocity.x, 0, (_thisRb.linearVelocity.z - thisAccel * Time.deltaTime));
+                _thisRb.linearVelocity = new Vector3(_thisRb.linearVelocity.x, 0, (_thisRb.linearVelocity.z - thisAccel ));
             }
 
             if (_thisKb.aKey.isPressed)
             {
-                _thisRb.linearVelocity = new Vector3((_thisRb.linearVelocity.x - thisAccel * Time.deltaTime), 0, _thisRb.linearVelocity.z);
+                _thisRb.linearVelocity = new Vector3((_thisRb.linearVelocity.x - thisAccel ), 0, _thisRb.linearVelocity.z);
             }
 
             if (_thisKb.dKey.isPressed)
             {
-                _thisRb.linearVelocity = new Vector3((_thisRb.linearVelocity.x + thisAccel * Time.deltaTime), 0, _thisRb.linearVelocity.z);
+                _thisRb.linearVelocity = new Vector3((_thisRb.linearVelocity.x + thisAccel ), 0, _thisRb.linearVelocity.z);
             }
         }
         else if (walkWeaponType.isStepper)

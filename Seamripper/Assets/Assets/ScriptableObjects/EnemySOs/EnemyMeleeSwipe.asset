@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12632ec4ef99cc94cbcd4e30d707e49b, type: 3}
   m_Name: EnemyMeleeSwipe
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMelee
-  meleeName: 
-  meleePrefab: {fileID: 0}
-  weaponDamage: 0
-  reloadTime: 0
-  meleeSize: 0
+  meleeName: Enemy Swipe
+  meleePrefab: {fileID: 4888250760015325221, guid: 4424aecea8140716eab191c8c033cd7f, type: 3}
+  weaponDamage: 2
+  reloadTime: 2
+  meleeSize: 1.3

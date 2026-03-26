@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0ff4aa8bebacb479ebca7ed84d8ec5, type: 3}
   m_Name: EnemyRangedShotgun
   m_EditorClassIdentifier: Assembly-CSharp::EnemyRanged
-  weaponName: 0
-  weaponDamage: 0
-  reloadTime: 0
-  projectileSpeed: 0
-  burstAmount: 0
+  weaponName: Enemy Shotgun
+  weaponDamage: 0.5
+  reloadTime: 3
+  projectileSpeed: 1
+  burstAmount: 1
+  burstReload: 0

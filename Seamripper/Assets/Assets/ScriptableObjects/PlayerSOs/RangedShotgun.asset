@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RangedShotgun
   m_EditorClassIdentifier: Assembly-CSharp::RangedWeapon
   weaponName: Shotgun
-  weaponBurst: 10
-  weaponDamage: 1
+  weaponBurst: 1
+  weaponDamage: 15
   weaponBurstDowntime: 0
   weaponDowntime: 0.8
   weaponDurability: 5
@@ -22,4 +22,4 @@ MonoBehaviour:
   weaponRicochet: 0
   weaponHitscan: 0
   weaponRange: 0.8
-  weaponAttackObject: {fileID: 4348861124752376055, guid: ba784b63f0ace9346819d3efecf4b017, type: 3}
+  weaponAttackObject: {fileID: 7444404128372394880, guid: c58fda44398032c64808b7b4c578e177, type: 3}

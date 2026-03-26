@@ -15,7 +15,7 @@ public class EnemyScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (playerObject != null)
         {
@@ -23,7 +23,7 @@ public class EnemyScript : MonoBehaviour
             {
                 Vector3 moveDirection = new Vector3(playerObject.transform.position.x, this.transform.position.y, playerObject.transform.position.z);
                 transform.LookAt(moveDirection);
-                rb.linearVelocity = transform.forward * (enemySpeed * Time.deltaTime);
+                rb.linearVelocity = transform.forward * (enemySpeed);
             }
         }
     }
@@ -39,7 +39,7 @@ public class EnemyScript : MonoBehaviour
 
             isHurt = true;
             enemyHealth = enemyHealth - damage;
-            rb.AddForce(new Vector3(this.transform.position.x - playerObject.transform.position.x, 0, this.transform.position.z - playerObject.transform.position.z) * (0.1f * damage), ForceMode.Impulse);
+            rb.AddForce(new Vector3(this.transform.position.x - playerObject.transform.position.x, 0, this.transform.position.z - playerObject.transform.position.z) * (1), ForceMode.Impulse);
             if (enemyHealth <= 0)
             {
                 Destroy(gameObject);

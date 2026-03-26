@@ -1,9 +1,7 @@
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections;
 
-
-public class BulletBehavior : MonoBehaviour
+public class BulletCopier : MonoBehaviour
 {
     public float bulletLifetime;
     public float bulletSpeed;
@@ -12,11 +10,16 @@ public class BulletBehavior : MonoBehaviour
     EnemyScript enemyTag;
     private MegaEnemyTag megaEnemyTag;
     public RangedWeapon WeaponType { get;  set; }
+
+    public BulletBehavior kingBullet;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(SelfDestruct());
+        bulletLifetime = kingBullet.bulletLifetime;
+        bulletSpeed = kingBullet.bulletSpeed;
+        bulletRb = transform.GetComponent<Rigidbody>();
+        bulletDeath = kingBullet.bulletDeath;
+        WeaponType = kingBullet.WeaponType;
     }
 
     void FixedUpdate()
@@ -38,9 +41,6 @@ public class BulletBehavior : MonoBehaviour
             megaEnemyTag.GetHurt(WeaponType.weaponDamage);
         }
     }
-
-
-
     IEnumerator SelfDestruct()
     {
 
@@ -52,9 +52,9 @@ public class BulletBehavior : MonoBehaviour
     IEnumerator HitThing()
     {
 
-            Instantiate(bulletDeath, this.transform.position, Quaternion.identity);
-            yield return null;
-            Destroy(gameObject);
+        Instantiate(bulletDeath, this.transform.position, Quaternion.identity);
+        yield return null;
+        Destroy(gameObject);
         
     }
 }

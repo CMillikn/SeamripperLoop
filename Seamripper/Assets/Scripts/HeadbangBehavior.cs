@@ -28,19 +28,19 @@ public class HeadbangBehavior : MonoBehaviour
             {
                 if (minibossTag.currentLimb == MegaEnemyTag.limbType.melee)
                 {
-
+                    bodyMan.ChangeMelee(bodyMan.MeleeArsenal[minibossTag.typeOfLimb]);
                 }
                 else if (minibossTag.currentLimb == MegaEnemyTag.limbType.ranged)
                 {
-
+                    bodyMan.ChangeRanged(bodyMan.RangedArsenal[minibossTag.typeOfLimb]);
                 }
                 else if (minibossTag.currentLimb == MegaEnemyTag.limbType.walk)
                 {
-
+                    bodyMan.ChangeWalk(bodyMan.WalkArsenal[minibossTag.typeOfLimb]);
                 }
                 else
                 {
-
+                    bodyMan.ChangeDash(bodyMan.DashArsenal[minibossTag.typeOfLimb]);
                 }
                 //int randomInt = Random.Range(1, 5);
                 //if (randomInt == 1)

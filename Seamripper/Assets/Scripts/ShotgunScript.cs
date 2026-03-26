@@ -7,6 +7,7 @@ public class ShotgunScript : MonoBehaviour
     public Rigidbody bulletRb;
     public GameObject bulletDeath;
     EnemyScript enemyTag;
+    private MegaEnemyTag megaEnemyTag;
     public RangedWeapon WeaponType { get; set; }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,18 +17,23 @@ public class ShotgunScript : MonoBehaviour
         StartCoroutine(SelfDestruct());
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        bulletRb.linearVelocity = transform.forward * ((WeaponType.bulletSpeed * Time.deltaTime) * 100);
+        bulletRb.linearVelocity = transform.forward * ((WeaponType.bulletSpeed));
     }
 
     private void OnCollisionEnter(Collision col)
     {
         StartCoroutine(HitThing());
         enemyTag = col.gameObject.GetComponent<EnemyScript>();
+        megaEnemyTag = col.gameObject.GetComponent<MegaEnemyTag>();
         if (enemyTag != null)
         {
             enemyTag.GetHurt(WeaponType.weaponDamage);
+        }
+        else if (megaEnemyTag != null)
+        {
+            megaEnemyTag.GetHurt(WeaponType.weaponDamage);
         }
     }
 

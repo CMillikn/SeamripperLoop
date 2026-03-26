@@ -19,7 +19,16 @@ public class MegaEnemyTag : MonoBehaviour
     }
     public limbType currentLimb;
     public int typeOfLimb;
-
+    public EnemyBodyManager enemyBodyManager;
+    private EnemyMelee meleeArm;
+    private EnemyRanged rangedArm;
+    private EnemyWalk walkArm;
+    private EnemyDash dashArm;
+    public EnemyMeleeAttackerScript meleeAttackerScript;
+    public EnemyRangedAttackerScript rangedAttackerScript;
+    public EnemyWalkAttackerScript walkAttackerScript;
+    public EnemyDashAttackerScript dashAttackerScript;
+    
     void Start()
     {
         int randomIndex = Random.Range(1, 5);
@@ -27,34 +36,45 @@ public class MegaEnemyTag : MonoBehaviour
         {
             currentLimb = limbType.melee;
             typeOfLimb = Random.Range(2, 5);
-            if (typeOfLimb == 2)
-            {
-
-            }
+            meleeArm = enemyBodyManager.MeleeArsenal[typeOfLimb];
+            rangedAttackerScript.enabled = false;
+            walkAttackerScript.enabled = false;
+            dashAttackerScript.enabled = false;
         }
         else if (randomIndex == 2)
         {
             currentLimb = limbType.ranged;
             typeOfLimb = Random.Range(2, 5);
+            rangedArm = enemyBodyManager.RangedArsenal[typeOfLimb];
+            meleeAttackerScript.enabled = false;
+            walkAttackerScript.enabled = false;
+            dashAttackerScript.enabled = false;
         }
         else if (randomIndex == 3)
         {
             currentLimb = limbType.walk;
             typeOfLimb = 2;
+            walkArm = enemyBodyManager.WalkArsenal[typeOfLimb];
+            meleeAttackerScript.enabled = false;
+            rangedAttackerScript.enabled = false;
+            dashAttackerScript.enabled = false;
         }
         else
         {
             currentLimb = limbType.dash;
             typeOfLimb = Random.Range(2, 5);
+            dashArm = enemyBodyManager.DashArsenal[typeOfLimb];
+            meleeAttackerScript.enabled = false;
+            rangedAttackerScript.enabled = false;
+            walkAttackerScript.enabled = false;
         }
         playerObject = GameManager.Instance.playerObject;
         rb = GetComponent<Rigidbody>();
-
     }
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (playerObject != null)
         {
@@ -63,7 +83,7 @@ public class MegaEnemyTag : MonoBehaviour
                 //Movement stuff
                 Vector3 moveDirection = new Vector3(playerObject.transform.position.x, this.transform.position.y, playerObject.transform.position.z);
                 transform.LookAt(moveDirection);
-                rb.linearVelocity = transform.forward * (enemySpeed * Time.deltaTime);
+                rb.linearVelocity = transform.forward * (enemySpeed);
 
 
             }
@@ -81,7 +101,7 @@ public class MegaEnemyTag : MonoBehaviour
 
             isHurt = true;
             enemyHealth = enemyHealth - damage;
-            rb.AddForce(new Vector3(this.transform.position.x - playerObject.transform.position.x, 0, this.transform.position.z - playerObject.transform.position.z) * (0.1f * damage), ForceMode.Impulse);
+            rb.AddForce(new Vector3(this.transform.position.x - playerObject.transform.position.x, 0, this.transform.position.z - playerObject.transform.position.z) * (1), ForceMode.Impulse);
             if (enemyHealth <= 0)
             {
                 Destroy(gameObject);

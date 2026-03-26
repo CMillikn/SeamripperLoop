@@ -8,7 +8,7 @@ public class EnemyBodyManager : MonoBehaviour
     public List<EnemyMelee> MeleeArsenal = new List<EnemyMelee>();
     public List<EnemyRanged> RangedArsenal = new List<EnemyRanged>();
     public List<EnemyWalk> WalkArsenal = new List<EnemyWalk>();
-    public List<EnemyWalk> DashArsenal = new List<EnemyWalk>();
+    public List<EnemyDash> DashArsenal = new List<EnemyDash>();
     void Start()
     {
         

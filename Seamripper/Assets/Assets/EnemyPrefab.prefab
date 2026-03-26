@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badb3133d41c7654ebc6939808872db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScript
-  enemyHealth: 10
-  enemySpeed: 500
+  enemyHealth: 30
+  enemySpeed: 3
   isHurt: 0
   playerObject: {fileID: 0}
   rb: {fileID: 0}

@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3384368469148678598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8971133361125659915}
+  - component: {fileID: 6151999357867041841}
+  m_Layer: 0
+  m_Name: EnemyPartsList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8971133361125659915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3384368469148678598}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.25946, y: 0, z: 3.6261}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6151999357867041841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3384368469148678598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd209ecc0415c864ebea4ed1bf191e06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyManager
+  MeleeArsenal:
+  - {fileID: 11400000, guid: 803479a22ff74f24c9664089b0764a4b, type: 2}
+  - {fileID: 11400000, guid: 803479a22ff74f24c9664089b0764a4b, type: 2}
+  - {fileID: 11400000, guid: e6095d74f4ff58a498587625f5aab606, type: 2}
+  - {fileID: 11400000, guid: 70af9b04bcdf5f248a40862251677b37, type: 2}
+  - {fileID: 11400000, guid: 803479a22ff74f24c9664089b0764a4b, type: 2}
+  RangedArsenal:
+  - {fileID: 11400000, guid: 0cc2051ac25f2b54b8011ed103690cc9, type: 2}
+  - {fileID: 11400000, guid: 0cc2051ac25f2b54b8011ed103690cc9, type: 2}
+  - {fileID: 11400000, guid: 0cc2051ac25f2b54b8011ed103690cc9, type: 2}
+  - {fileID: 11400000, guid: 55d9cacbcd2dacb47bd08f683efe1822, type: 2}
+  - {fileID: 11400000, guid: c1fb0dcb52b0c3c4090aeb8aa586831e, type: 2}
+  WalkArsenal:
+  - {fileID: 11400000, guid: d197da50469424c42bab5bab4f5f4e7c, type: 2}
+  - {fileID: 11400000, guid: d197da50469424c42bab5bab4f5f4e7c, type: 2}
+  - {fileID: 11400000, guid: d197da50469424c42bab5bab4f5f4e7c, type: 2}
+  DashArsenal:
+  - {fileID: 11400000, guid: 10c7a68cad5de9340992f39dcba1acdd, type: 2}
+  - {fileID: 11400000, guid: 10c7a68cad5de9340992f39dcba1acdd, type: 2}
+  - {fileID: 11400000, guid: 10c7a68cad5de9340992f39dcba1acdd, type: 2}
+  - {fileID: 11400000, guid: 3a9c9e6776229b94bb63bb55f9ed7d81, type: 2}
+  - {fileID: 11400000, guid: 465fe62f5910a094f885a893697dd189, type: 2}
