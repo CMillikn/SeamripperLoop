@@ -25,6 +25,7 @@ public class MovementScript : MonoBehaviour
     public float headbangCooldown;
     public GameObject headbangObject;
     public GameObject bodyParts;
+    
     GameObject instancedHeadbangGO;
 
 
@@ -59,6 +60,7 @@ public class MovementScript : MonoBehaviour
         {
             isHeadbanging = true;
             bodyParts.SetActive(false);
+            _thisRb.mass = 100;
             yield return new WaitForSeconds(headbangStartup);
             instancedHeadbangGO = Instantiate(headbangObject, playerObject.transform.position, Quaternion.identity);
             Vector3 dashDirection = dashObject.transform.position - playerObject.transform.position;
@@ -66,6 +68,7 @@ public class MovementScript : MonoBehaviour
             yield return new WaitForSeconds(headbangCooldown);
             bodyParts.SetActive(true);
             isHeadbanging = false;
+            _thisRb.mass = 1;
             GameManager.Instance.playerBodyManager.ReloadEverything();
         }
     }

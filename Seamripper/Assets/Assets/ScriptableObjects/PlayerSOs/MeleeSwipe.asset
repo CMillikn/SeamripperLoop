@@ -17,5 +17,6 @@ MonoBehaviour:
   weaponDamage: 10
   weaponDowntime: 3
   weaponDurability: 5
-  weaponRange: 4
+  weaponRange: 3
   weaponAttackObject: {fileID: 8265774263698634304, guid: 32083e3e7b16d704f9c9e4f53f9089ad, type: 3}
+  weaponVis: {fileID: 0}

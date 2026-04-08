@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b41d62d83fc0d245ae93d84286d7c49, type: 3}
   m_Name: WalkBetter
   m_EditorClassIdentifier: Assembly-CSharp::WalkWeapon
-  walkSpeed: 8
+  walkSpeed: 6
   weaponName: Better Legs
-  walkAccel: 8
-  walkDecel: 8
+  walkAccel: 6
+  walkDecel: 6
   isStepper: 0
   isLimper: 0
   stepAmount: 0
   limpAmount: 0
   weaponDurability: 10
+  weaponVis: {fileID: 0}

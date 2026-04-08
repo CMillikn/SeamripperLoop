@@ -11,5 +11,6 @@ public class DashWeapon : ScriptableObject
     public GameObject dashFollowerObject;
     public GameObject dashLandObject;
     public string weaponName;
+    public Mesh weaponVis;
     public float weaponDurability;
 }

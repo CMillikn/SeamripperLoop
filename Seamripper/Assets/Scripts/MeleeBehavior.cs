@@ -4,6 +4,7 @@ using UnityEngine;
 public class MeleeBehavior : MonoBehaviour
 {
     EnemyScript enemyTag;
+    MegaEnemyTag minibossTag;
     public MeleeWeapon WeaponType { get; set; }
 
     public void Start()
@@ -21,15 +22,14 @@ public class MeleeBehavior : MonoBehaviour
     private void OnCollisionEnter(Collision col)
     {
         enemyTag = col.gameObject.GetComponent<EnemyScript>();
+        minibossTag = col.gameObject.GetComponent<MegaEnemyTag>();
         if (enemyTag != null)
         {
-            StartCoroutine(waitForHit(enemyTag));
+            enemyTag.GetMeleeHurt(WeaponType.weaponDamage);
         }
-    }
-
-    IEnumerator waitForHit(EnemyScript enemyScript)
-    {
-        yield return new WaitForEndOfFrame();
-        enemyScript.GetHurt(WeaponType.weaponDamage);
+        if (minibossTag != null)
+        {
+            minibossTag.GetMeleeHurt(WeaponType.weaponDamage);
+        }
     }
 }

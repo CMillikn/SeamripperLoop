@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9044259930276467503}
   - component: {fileID: 489604658268385010}
   - component: {fileID: 6360810877489133318}
-  - component: {fileID: 1827993606855748199}
   - component: {fileID: 9035139308851355129}
   - component: {fileID: 2540443776477245306}
   - component: {fileID: 4889116257161839554}
@@ -120,23 +119,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1827993606855748199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4184140773157696806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: badb3133d41c7654ebc6939808872db4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyScript
-  enemyHealth: 50
-  enemySpeed: 4
-  isHurt: 0
-  playerObject: {fileID: 0}
-  rb: {fileID: 0}
 --- !u!54 &9035139308851355129
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -176,8 +158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9424dc6439a374d4dac325954b7e08ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MegaEnemyTag
-  enemyHealth: 30
-  enemySpeed: 2
+  enemyHealth: 50
+  enemySpeed: 1
   isHurt: 0
   playerObject: {fileID: 0}
   rb: {fileID: 0}
@@ -188,6 +170,7 @@ MonoBehaviour:
   rangedAttackerScript: {fileID: 2670847964686157109}
   walkAttackerScript: {fileID: 3957617816202898275}
   dashAttackerScript: {fileID: 6351401846057769039}
+  deathSplash: {fileID: 8592894797565067684, guid: 8a141a91b2e5dfa42980e83c5c908968, type: 3}
 --- !u!114 &4889116257161839554
 MonoBehaviour:
   m_ObjectHideFlags: 0

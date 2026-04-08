@@ -21,6 +21,7 @@ public class DashLegScript : MonoBehaviour
     public float weaponHealth;
     public DashWeapon damagedDash;
     GameObject instantiatedDash;
+    GameObject legAnchor;
 
     void Start()
     {

@@ -18,8 +18,9 @@ MonoBehaviour:
   weaponBurstDowntime: 0
   weaponDowntime: 0.8
   weaponDurability: 5
-  bulletSpeed: 50
+  bulletSpeed: 20
   weaponRicochet: 0
   weaponHitscan: 0
   weaponRange: 0.8
   weaponAttackObject: {fileID: 7444404128372394880, guid: c58fda44398032c64808b7b4c578e177, type: 3}
+  weaponVis: {fileID: 0}

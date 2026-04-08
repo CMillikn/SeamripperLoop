@@ -9,6 +9,7 @@ public class MegaEnemyTag : MonoBehaviour
     public bool isHurt;
     public GameObject playerObject;
     public Rigidbody rb;
+    
     //1 is melee, 2 is ranged, 3 is walk, 4 is dash
     public enum limbType
     {
@@ -28,6 +29,7 @@ public class MegaEnemyTag : MonoBehaviour
     public EnemyRangedAttackerScript rangedAttackerScript;
     public EnemyWalkAttackerScript walkAttackerScript;
     public EnemyDashAttackerScript dashAttackerScript;
+    public GameObject deathSplash;
     
     void Start()
     {
@@ -88,15 +90,28 @@ public class MegaEnemyTag : MonoBehaviour
 
             }
         }
+        transform.position = new Vector3(transform.position.x, 1, transform.position.z);
     }
 
     public void GetHurt(float damage)
     {
-        //if (isHurt)
-        //{
-        //    return;
-        //}
-        //else
+        isHurt = true;
+        enemyHealth = enemyHealth - damage;
+        rb.AddForce(new Vector3(this.transform.position.x - playerObject.transform.position.x, 0, this.transform.position.z - playerObject.transform.position.z) * (1), ForceMode.Impulse);
+        if (enemyHealth <= 0)
+        {
+            GetKilled();
+        }
+        StartCoroutine(hurtWait());
+    }
+
+    public void GetMeleeHurt(float damage)
+    {
+        if (isHurt)
+        {
+            return;
+        }
+        else
         {
 
             isHurt = true;
@@ -104,7 +119,7 @@ public class MegaEnemyTag : MonoBehaviour
             rb.AddForce(new Vector3(this.transform.position.x - playerObject.transform.position.x, 0, this.transform.position.z - playerObject.transform.position.z) * (1), ForceMode.Impulse);
             if (enemyHealth <= 0)
             {
-                Destroy(gameObject);
+                GetKilled();
             }
             StartCoroutine(hurtWait());
         }
@@ -116,4 +131,12 @@ public class MegaEnemyTag : MonoBehaviour
         isHurt = false;
         rb.linearVelocity = Vector3.zero;
     }
+
+    public void GetKilled()
+    {
+        Instantiate(deathSplash, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
+
 }

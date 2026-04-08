@@ -14,4 +14,5 @@ public class RangedWeapon : ScriptableObject
     public bool weaponHitscan;
     public float weaponRange;
     public GameObject weaponAttackObject;
+    public Mesh weaponVis;
 }

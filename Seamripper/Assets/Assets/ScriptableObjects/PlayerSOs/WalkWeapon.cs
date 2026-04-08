@@ -12,4 +12,5 @@ public class WalkWeapon : ScriptableObject
     public int stepAmount;
     public int limpAmount;
     public float weaponDurability;
+    public Mesh weaponVis;
 }

@@ -127,10 +127,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScript
   enemyHealth: 30
-  enemySpeed: 3
+  enemySpeed: 1.5
   isHurt: 0
   playerObject: {fileID: 0}
   rb: {fileID: 0}
+  deathSplash: {fileID: 8592894797565067684, guid: 8a141a91b2e5dfa42980e83c5c908968, type: 3}
 --- !u!54 &2610425273942783049
 Rigidbody:
   m_ObjectHideFlags: 0
