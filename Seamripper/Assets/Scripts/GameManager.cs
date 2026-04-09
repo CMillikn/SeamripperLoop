@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        /*if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             playerBodyManager.ChangeMelee(playerBodyManager.MeleeArsenal[0]);
         }
@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             playerBodyManager.ChangeRanged(playerBodyManager.RangedArsenal[2]);
-        }
+        }*/
+        
     }
 }
