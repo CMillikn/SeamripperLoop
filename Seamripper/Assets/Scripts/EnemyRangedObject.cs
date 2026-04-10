@@ -6,6 +6,7 @@ public class EnemyRangedObject : MonoBehaviour
 {
     private MovementScript playerScript;
     public EnemyRanged weaponType { get; set; }
+    public Rigidbody _rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,9 +14,9 @@ public class EnemyRangedObject : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        _rb.linearVelocity = transform.forward * (weaponType.projectileSpeed);
     }
     IEnumerator SelfDestruct()
     {

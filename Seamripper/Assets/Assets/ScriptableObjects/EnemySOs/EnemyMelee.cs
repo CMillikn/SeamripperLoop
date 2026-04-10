@@ -8,4 +8,5 @@ public class EnemyMelee : ScriptableObject
     public float weaponDamage;
     public float reloadTime;
     public float meleeSize;
+    public Mesh weaponVis;
 }

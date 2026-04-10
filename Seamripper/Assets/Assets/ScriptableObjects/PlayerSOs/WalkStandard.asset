@@ -21,3 +21,4 @@ MonoBehaviour:
   stepAmount: 0
   limpAmount: 0
   weaponDurability: 5
+  weaponVis: {fileID: 2537422257332086475, guid: 7b1201309f92d474ba79a29225cf99ea, type: 3}

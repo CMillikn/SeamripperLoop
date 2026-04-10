@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMelee
   meleeName: Enemy Claws
   meleePrefab: {fileID: 4888250760015325221, guid: 4424aecea8140716eab191c8c033cd7f, type: 3}
-  weaponDamage: 1
-  reloadTime: 1
-  meleeSize: 0.6
+  weaponDamage: 2
+  reloadTime: 0.75
+  meleeSize: 1.5
+  weaponVis: {fileID: -1083903894834702787, guid: 7b1201309f92d474ba79a29225cf99ea, type: 3}

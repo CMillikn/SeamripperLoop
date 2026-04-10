@@ -10,14 +10,14 @@ public class RangedArmScript : MonoBehaviour
     public RangedWeapon rangedWeaponType;
     public RangedWeapon damagedRanged;
     public float weaponHealth;
+    public MeshRenderer thisMesh;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         currentMouse = Mouse.current;   
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (weaponHealth <= 0)
@@ -55,5 +55,22 @@ public class RangedArmScript : MonoBehaviour
         }
         yield return new WaitForSeconds(rangedWeaponType.weaponDowntime);
         reloaded = true;
+    }
+
+    public void GetHurt(float damage)
+    {
+        weaponHealth = weaponHealth - damage;
+        StartCoroutine(flashArm());
+    }
+
+    IEnumerator flashArm()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            thisMesh.material.color = Color.red;
+            yield return new WaitForSeconds(0.05f);
+            thisMesh.material.color = Color.white;
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 }

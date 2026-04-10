@@ -21,7 +21,7 @@ public class BulletBehavior : MonoBehaviour
 
     void FixedUpdate()
     {
-        bulletRb.linearVelocity = transform.forward * ((WeaponType.bulletSpeed));
+        bulletRb.linearVelocity = transform.forward * (WeaponType.bulletSpeed);
     }
 
     private void OnCollisionEnter(Collision col)

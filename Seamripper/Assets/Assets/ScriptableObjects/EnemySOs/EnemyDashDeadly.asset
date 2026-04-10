@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: EnemyDashDeadly
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDash
   weaponName: 
-  dashSpeed: 0
-  dashCooldown: 0
-  dashObject: {fileID: 0}
+  dashSpeed: 10
+  dashCooldown: 2
+  dashObject: {fileID: 4888250760015325221, guid: 4424aecea8140716eab191c8c033cd7f, type: 3}
+  weaponVis: {fileID: 529169676649611182, guid: 7b1201309f92d474ba79a29225cf99ea, type: 3}

@@ -28,7 +28,18 @@ public class MovementScript : MonoBehaviour
     
     GameObject instancedHeadbangGO;
 
+    public float InvulnTimer;
+    public bool canBeHurt;
 
+    EnemyScript enemyScript;
+    MegaEnemyTag minibossTag;
+    EnemyMeleeObject enemyMeleeScript;
+    EnemyRangedObject enemyRangedScript;
+
+    public MeleeArmScript meleeArmScript;
+    public RangedArmScript rangedArmScript;
+    public DashLegScript dashLegScript;
+    public WalkLegScript walkLegScript;
     
     void Start()
     {
@@ -59,6 +70,7 @@ public class MovementScript : MonoBehaviour
         IEnumerator HeadbangCoroutine()
         {
             isHeadbanging = true;
+            canBeHurt = false;
             bodyParts.SetActive(false);
             _thisRb.mass = 100;
             yield return new WaitForSeconds(headbangStartup);
@@ -68,8 +80,60 @@ public class MovementScript : MonoBehaviour
             yield return new WaitForSeconds(headbangCooldown);
             bodyParts.SetActive(true);
             isHeadbanging = false;
+            canBeHurt = true;
             _thisRb.mass = 1;
             GameManager.Instance.playerBodyManager.ReloadEverything();
+        }
+    }
+
+    IEnumerator GetHurt(float damage)
+    {
+        canBeHurt = false;
+        int randomChoice = Random.Range(1, 5);
+        if (randomChoice == 1)
+        {
+            meleeArmScript.GetHurt(damage);
+        }
+        else if (randomChoice == 2)
+        {
+            rangedArmScript.GetHurt(damage);
+        }
+        else if (randomChoice == 3)
+        {
+            dashLegScript.GetHurt(damage);
+        }
+        else
+        {
+            walkLegScript.GetHurt(damage);
+        }
+        yield return new WaitForSeconds(InvulnTimer);
+        canBeHurt = true;
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if (canBeHurt)
+        {
+            minibossTag = col.gameObject.GetComponent<MegaEnemyTag>();
+            enemyScript = col.gameObject.GetComponent<EnemyScript>();
+            enemyMeleeScript = col.gameObject.GetComponent<EnemyMeleeObject>();
+            enemyRangedScript = col.gameObject.GetComponent<EnemyRangedObject>();
+            if (minibossTag != null)
+            {
+                StartCoroutine(GetHurt(minibossTag.contactDamage));
+            }
+            else if (enemyScript != null)
+            {
+                StartCoroutine(GetHurt(enemyScript.contactDamage));
+            }
+            else if (enemyMeleeScript != null)
+            {
+                StartCoroutine(GetHurt(enemyMeleeScript.weaponType.weaponDamage));
+            }
+            else if (enemyRangedScript != null)
+            {
+                StartCoroutine(GetHurt(enemyRangedScript.weaponType.weaponDamage));
+            }
         }
     }
 }

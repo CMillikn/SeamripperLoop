@@ -22,6 +22,8 @@ public class DashLegScript : MonoBehaviour
     public DashWeapon damagedDash;
     GameObject instantiatedDash;
     GameObject legAnchor;
+    public MeshRenderer thisMesh;
+    public MovementScript movementScript;
 
     void Start()
     {
@@ -52,6 +54,7 @@ public class DashLegScript : MonoBehaviour
         dashStart = dashWeaponType.dashStartObject;
         dashMid = dashWeaponType.dashFollowerObject;
         isDashing = true;
+        movementScript.canBeHurt = false;
         if (dashStart != null)
         {
             Instantiate(dashStart,playerObject.transform.position,Quaternion.identity);
@@ -63,7 +66,25 @@ public class DashLegScript : MonoBehaviour
         }
         Vector3 dashDirection = dashObject.transform.position - playerObject.transform.position;
         _thisRb.AddForce(dashDirection * dashWeaponType.dashSpeed, ForceMode.Impulse);
+        movementScript.canBeHurt = true;
         yield return new WaitForSeconds(dashWeaponType.dashCooldown);
         isDashing = false;
+    }
+
+    public void GetHurt(float damage)
+    {
+        weaponHealth = weaponHealth - damage;
+        StartCoroutine(flashArm());
+    }
+
+    IEnumerator flashArm()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            thisMesh.material.color = Color.red;
+            yield return new WaitForSeconds(0.05f);
+            thisMesh.material.color = Color.white;
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 }

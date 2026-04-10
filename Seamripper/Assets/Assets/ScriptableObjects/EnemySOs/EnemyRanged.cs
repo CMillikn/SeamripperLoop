@@ -9,4 +9,6 @@ public class EnemyRanged : ScriptableObject
     public float projectileSpeed;
     public int burstAmount;
     public float burstReload;
+    public Mesh weaponVis;
+    public GameObject weaponBullet;
 }

@@ -7,4 +7,5 @@ public class EnemyDash : ScriptableObject
     public float dashSpeed;
     public float dashCooldown;
     public GameObject dashObject;
+    public Mesh weaponVis;
 }

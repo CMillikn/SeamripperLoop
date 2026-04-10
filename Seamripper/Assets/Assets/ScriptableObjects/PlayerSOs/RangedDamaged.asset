@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedWeapon
   weaponName: Damaged Fallback Arm
   weaponBurst: 1
-  weaponDamage: 5
+  weaponDamage: 1
   weaponBurstDowntime: 0
   weaponDowntime: 0.5
   weaponDurability: 999999
@@ -23,3 +23,4 @@ MonoBehaviour:
   weaponHitscan: 0
   weaponRange: 2
   weaponAttackObject: {fileID: 4348861124752376055, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
+  weaponVis: {fileID: 2803218405304177731, guid: 7b1201309f92d474ba79a29225cf99ea, type: 3}

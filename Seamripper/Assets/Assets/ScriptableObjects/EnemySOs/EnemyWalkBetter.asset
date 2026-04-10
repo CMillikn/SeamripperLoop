@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404724f5c819dca4bb0b4dbf775216eb, type: 3}
   m_Name: EnemyWalkBetter
   m_EditorClassIdentifier: Assembly-CSharp::EnemyWalk
+  weaponVis: {fileID: -14640993494751578, guid: 7b1201309f92d474ba79a29225cf99ea, type: 3}

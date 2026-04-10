@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedWeapon
   weaponName: Burst Rifle
   weaponBurst: 3
-  weaponDamage: 15
+  weaponDamage: 2.5
   weaponBurstDowntime: 0.1
   weaponDowntime: 1
   weaponDurability: 5
@@ -23,3 +23,4 @@ MonoBehaviour:
   weaponHitscan: 0
   weaponRange: 2
   weaponAttackObject: {fileID: 4348861124752376055, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
+  weaponVis: {fileID: -7818700081164973238, guid: 7b1201309f92d474ba79a29225cf99ea, type: 3}

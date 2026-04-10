@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,9 @@ public class WalkLegScript : MonoBehaviour
     public bool canStep;
     public WalkWeapon damagedWalk;
     public float weaponHealth;
+    public MeshRenderer walkLeg;
+    public MeshRenderer thisMesh;
+
     void Start()
     {
         _thisKb = Keyboard.current;
@@ -67,6 +71,23 @@ public class WalkLegScript : MonoBehaviour
         else
         {
 
+        }
+    }
+
+    public void GetHurt(float damage)
+    {
+        weaponHealth = weaponHealth - damage;
+        StartCoroutine(flashArm());
+    }
+
+    IEnumerator flashArm()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            thisMesh.material.color = Color.red;
+            yield return new WaitForSeconds(0.05f);
+            thisMesh.material.color = Color.white;
+            yield return new WaitForSeconds(0.05f);
         }
     }
 }

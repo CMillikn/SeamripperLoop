@@ -11,7 +11,8 @@ public class EnemyMeleeAttackerScript : MonoBehaviour
     private float meleeSize;
     public EnemyMelee enemyMelee;
     private EnemyMeleeObject enemyMeleeScript;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public MegaEnemyTag minibossTag;
+
     void Start()
     {
         isReloaded = true;
@@ -21,12 +22,14 @@ public class EnemyMeleeAttackerScript : MonoBehaviour
         meleePrefab = enemyMelee.meleePrefab;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (isReloaded)
+        if (minibossTag.isTutorialGuy == false)
         {
-            StartCoroutine(EnemySlice());
+            if (isReloaded)
+            {
+                StartCoroutine(EnemySlice());
+            }
         }
     }
 

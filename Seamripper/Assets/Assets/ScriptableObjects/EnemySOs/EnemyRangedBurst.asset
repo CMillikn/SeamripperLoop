@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: EnemyRangedBurst
   m_EditorClassIdentifier: Assembly-CSharp::EnemyRanged
   weaponName: Enemy Burst
-  weaponDamage: 0.3
+  weaponDamage: 2
   reloadTime: 2
-  projectileSpeed: 3
+  projectileSpeed: 6
   burstAmount: 3
   burstReload: 0.3
+  weaponVis: {fileID: -7818700081164973238, guid: 7b1201309f92d474ba79a29225cf99ea, type: 3}
+  weaponBullet: {fileID: 5296985826546814152, guid: 97dfc8b6ab7ca3949b8dd6e77b0cc99a, type: 3}

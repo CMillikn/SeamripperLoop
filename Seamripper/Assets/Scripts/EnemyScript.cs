@@ -9,6 +9,7 @@ public class EnemyScript : MonoBehaviour
     public GameObject playerObject;
     public Rigidbody rb;
     public GameObject deathSplash;
+    public float contactDamage;
     void Start()
     {
         playerObject = GameManager.Instance.playerObject;
@@ -36,6 +37,7 @@ public class EnemyScript : MonoBehaviour
         {
             isHurt = true;
             enemyHealth = enemyHealth - damage;
+            rb.linearVelocity = Vector3.zero;
             rb.AddForce(new Vector3(this.transform.position.x - playerObject.transform.position.x, 0, this.transform.position.z - playerObject.transform.position.z) * (1), ForceMode.Impulse);
             if (enemyHealth <= 0)
             {
@@ -56,6 +58,7 @@ public class EnemyScript : MonoBehaviour
 
             isHurt = true;
             enemyHealth = enemyHealth - damage;
+            rb.linearVelocity = Vector3.zero;
             rb.AddForce(new Vector3(this.transform.position.x - playerObject.transform.position.x, 0, this.transform.position.z - playerObject.transform.position.z) * (1), ForceMode.Impulse);
             if (enemyHealth <= 0)
             {

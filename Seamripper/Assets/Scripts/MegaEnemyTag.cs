@@ -9,6 +9,7 @@ public class MegaEnemyTag : MonoBehaviour
     public bool isHurt;
     public GameObject playerObject;
     public Rigidbody rb;
+    public float contactDamage;
     
     //1 is melee, 2 is ranged, 3 is walk, 4 is dash
     public enum limbType
@@ -30,6 +31,20 @@ public class MegaEnemyTag : MonoBehaviour
     public EnemyWalkAttackerScript walkAttackerScript;
     public EnemyDashAttackerScript dashAttackerScript;
     public GameObject deathSplash;
+
+    public MeshFilter meleeArmMesh;
+    public MeshRenderer meleeArmRenderer;
+
+    public MeshFilter rangedArmMesh;
+    public MeshRenderer rangedArmRenderer;
+
+    public MeshFilter dashLegMesh;
+    public MeshRenderer dashLegRenderer;
+
+    public MeshFilter walkLegMesh;
+    public MeshRenderer walkLegRenderer;
+
+    public bool isTutorialGuy;
     
     void Start()
     {
@@ -39,6 +54,9 @@ public class MegaEnemyTag : MonoBehaviour
             currentLimb = limbType.melee;
             typeOfLimb = Random.Range(2, 5);
             meleeArm = enemyBodyManager.MeleeArsenal[typeOfLimb];
+            meleeArmMesh.mesh = meleeArm.weaponVis;
+            meleeAttackerScript.enemyMelee = meleeArm;
+            meleeArmRenderer.material.color = Color.white;
             rangedAttackerScript.enabled = false;
             walkAttackerScript.enabled = false;
             dashAttackerScript.enabled = false;
@@ -48,6 +66,9 @@ public class MegaEnemyTag : MonoBehaviour
             currentLimb = limbType.ranged;
             typeOfLimb = Random.Range(2, 5);
             rangedArm = enemyBodyManager.RangedArsenal[typeOfLimb];
+            rangedArmMesh.mesh = rangedArm.weaponVis;
+            rangedAttackerScript.enemyRanged = rangedArm;
+            rangedArmRenderer.material.color = Color.white;
             meleeAttackerScript.enabled = false;
             walkAttackerScript.enabled = false;
             dashAttackerScript.enabled = false;
@@ -57,6 +78,9 @@ public class MegaEnemyTag : MonoBehaviour
             currentLimb = limbType.walk;
             typeOfLimb = 2;
             walkArm = enemyBodyManager.WalkArsenal[typeOfLimb];
+            walkLegMesh.mesh = walkArm.weaponVis;
+            walkAttackerScript.enemyWalk = walkArm;
+            walkLegRenderer.material.color = Color.white;
             meleeAttackerScript.enabled = false;
             rangedAttackerScript.enabled = false;
             dashAttackerScript.enabled = false;
@@ -66,6 +90,9 @@ public class MegaEnemyTag : MonoBehaviour
             currentLimb = limbType.dash;
             typeOfLimb = Random.Range(2, 5);
             dashArm = enemyBodyManager.DashArsenal[typeOfLimb];
+            dashLegMesh.mesh = dashArm.weaponVis;
+            dashAttackerScript.enemyDash = dashArm;
+            dashLegRenderer.material.color = Color.white;
             meleeAttackerScript.enabled = false;
             rangedAttackerScript.enabled = false;
             walkAttackerScript.enabled = false;
@@ -97,6 +124,7 @@ public class MegaEnemyTag : MonoBehaviour
     {
         isHurt = true;
         enemyHealth = enemyHealth - damage;
+        rb.linearVelocity = Vector3.zero;
         rb.AddForce(new Vector3(this.transform.position.x - playerObject.transform.position.x, 0, this.transform.position.z - playerObject.transform.position.z) * (1), ForceMode.Impulse);
         if (enemyHealth <= 0)
         {
@@ -116,6 +144,7 @@ public class MegaEnemyTag : MonoBehaviour
 
             isHurt = true;
             enemyHealth = enemyHealth - damage;
+            rb.linearVelocity = Vector3.zero;
             rb.AddForce(new Vector3(this.transform.position.x - playerObject.transform.position.x, 0, this.transform.position.z - playerObject.transform.position.z) * (1), ForceMode.Impulse);
             if (enemyHealth <= 0)
             {

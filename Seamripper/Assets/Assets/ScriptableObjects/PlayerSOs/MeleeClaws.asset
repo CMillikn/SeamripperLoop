@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MeleeWeapon
   weaponName: Claws
   weaponBurst: 1
-  weaponDamage: 5
+  weaponDamage: 10
   weaponDowntime: 0.2
   weaponDurability: 3
-  weaponRange: 1
+  weaponRange: 1.5
   weaponAttackObject: {fileID: 8265774263698634304, guid: 32083e3e7b16d704f9c9e4f53f9089ad, type: 3}
-  weaponVis: {fileID: 0}
+  weaponVis: {fileID: -1083903894834702787, guid: 7b1201309f92d474ba79a29225cf99ea, type: 3}

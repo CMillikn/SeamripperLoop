@@ -19,3 +19,4 @@ MonoBehaviour:
   weaponDurability: 3
   weaponRange: 1.5
   weaponAttackObject: {fileID: 8265774263698634304, guid: 32083e3e7b16d704f9c9e4f53f9089ad, type: 3}
+  weaponVis: {fileID: -5495902117074765545, guid: 94dafa8d948da8340a0f2e4165518d6f, type: 3}

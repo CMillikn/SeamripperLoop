@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1770835026299280202}
   - component: {fileID: 404845828722823167}
   - component: {fileID: 7164097817348297518}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: EnemySpearPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 4419513286675913804}
   - component: {fileID: 5762324626040724485}
   - component: {fileID: 646792121040699118}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
