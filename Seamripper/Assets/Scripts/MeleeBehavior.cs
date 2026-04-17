@@ -5,6 +5,7 @@ public class MeleeBehavior : MonoBehaviour
 {
     EnemyScript enemyTag;
     MegaEnemyTag minibossTag;
+    BossScript bossScript;
     public MeleeWeapon WeaponType { get; set; }
 
     public void Start()
@@ -23,6 +24,7 @@ public class MeleeBehavior : MonoBehaviour
     {
         enemyTag = col.gameObject.GetComponent<EnemyScript>();
         minibossTag = col.gameObject.GetComponent<MegaEnemyTag>();
+        bossScript = col.gameObject.GetComponent<BossScript>();
         if (enemyTag != null)
         {
             enemyTag.GetMeleeHurt(WeaponType.weaponDamage);
@@ -30,6 +32,10 @@ public class MeleeBehavior : MonoBehaviour
         if (minibossTag != null)
         {
             minibossTag.GetMeleeHurt(WeaponType.weaponDamage);
+        }
+        if (bossScript != null)
+        {
+            bossScript.GetMeleeHurt(WeaponType.weaponDamage);
         }
     }
 }

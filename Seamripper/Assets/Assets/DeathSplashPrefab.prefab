@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4714669379919942527}
   - component: {fileID: 2341822933423411206}
   - component: {fileID: 5054191794891455224}
+  - component: {fileID: 6593360837205645705}
   m_Layer: 0
   m_Name: DeathSplashPrefab
   m_TagString: Untagged
@@ -4903,3 +4904,16 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
+--- !u!114 &6593360837205645705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8592894797565067684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4626ae651e53959448947e808b580fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelfDestruct
+  waitTime: 1

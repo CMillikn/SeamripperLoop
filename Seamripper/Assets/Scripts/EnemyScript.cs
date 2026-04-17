@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -10,15 +11,18 @@ public class EnemyScript : MonoBehaviour
     public Rigidbody rb;
     public GameObject deathSplash;
     public float contactDamage;
+    public Slider healthSlider;
     void Start()
     {
         playerObject = GameManager.Instance.playerObject;
         rb = GetComponent<Rigidbody>();
+        healthSlider.maxValue = enemyHealth;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        healthSlider.value = enemyHealth;
         if (playerObject != null)
         {
 

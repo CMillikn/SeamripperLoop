@@ -4,12 +4,23 @@ public class EnemyWalkAttackerScript : MonoBehaviour
 {
     public EnemyWalk enemyWalk;
     public MegaEnemyTag minibossTag;
+    public BossScript bossScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (minibossTag.isTutorialGuy == false)
+        if (minibossTag != null)
         {
-            minibossTag.enemySpeed = 2;
+            if (minibossTag.isTutorialGuy == false)
+            {
+                minibossTag.enemySpeed = minibossTag.enemySpeed * 2;
+            }
+        }
+        else if (bossScript != null)
+        {
+            if (bossScript.isTutorialGuy == false)
+            {
+                bossScript.enemySpeed = bossScript.enemySpeed * 2;
+            }
         }
     }
 

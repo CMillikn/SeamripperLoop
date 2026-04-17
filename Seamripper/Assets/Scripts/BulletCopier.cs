@@ -9,6 +9,7 @@ public class BulletCopier : MonoBehaviour
     public GameObject bulletDeath;
     EnemyScript enemyTag;
     private MegaEnemyTag megaEnemyTag;
+    BossScript bossScript;
     public RangedWeapon WeaponType { get;  set; }
 
     public BulletBehavior kingBullet;
@@ -32,6 +33,7 @@ public class BulletCopier : MonoBehaviour
         StartCoroutine(HitThing());
         enemyTag = col.gameObject.GetComponent<EnemyScript>();
         megaEnemyTag = col.gameObject.GetComponent<MegaEnemyTag>();
+        bossScript = col.gameObject.GetComponent<BossScript>();
         if (enemyTag != null)
         {
             enemyTag.GetHurt(WeaponType.weaponDamage);
@@ -39,6 +41,10 @@ public class BulletCopier : MonoBehaviour
         else if (megaEnemyTag != null)
         {
             megaEnemyTag.GetHurt(WeaponType.weaponDamage);
+        }
+        else if (bossScript != null)
+        {
+            bossScript.GetHurt(WeaponType.weaponDamage);
         }
     }
     IEnumerator SelfDestruct()
@@ -54,7 +60,7 @@ public class BulletCopier : MonoBehaviour
 
         Instantiate(bulletDeath, this.transform.position, Quaternion.identity);
         yield return null;
-        Destroy(gameObject);
+        //Destroy(gameObject);
         
     }
 }

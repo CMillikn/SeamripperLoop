@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedWeapon
   weaponName: Shotgun
   weaponBurst: 1
-  weaponDamage: 2.5
+  weaponDamage: 5
   weaponBurstDowntime: 0
   weaponDowntime: 0.8
   weaponDurability: 5

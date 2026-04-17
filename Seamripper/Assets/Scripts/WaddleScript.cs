@@ -15,13 +15,13 @@ public class WaddleScript : MonoBehaviour
     void Start()
     {
         startingQuarternion = this.transform.localRotation;
+        forwardRotate = forwardReference.transform.localRotation;
+        backwardRotate = backwardReference.transform.localRotation;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        forwardRotate = forwardReference.transform.localRotation;
-        backwardRotate = backwardReference.transform.localRotation;
         if (isLeftLeg)
         {
             if (transform.localRotation == forwardRotate)

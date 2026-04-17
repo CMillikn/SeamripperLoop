@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MegaEnemyTag : MonoBehaviour
 {
@@ -44,10 +45,16 @@ public class MegaEnemyTag : MonoBehaviour
     public MeshFilter walkLegMesh;
     public MeshRenderer walkLegRenderer;
 
+    public GameObject halfHealthBleeding;
+
     public bool isTutorialGuy;
-    
+
+    public Slider healthSlider;
+    public Image healthFill;
+
     void Start()
     {
+        healthSlider.maxValue = enemyHealth;
         int randomIndex = Random.Range(1, 5);
         if (randomIndex == 1)
         {
@@ -105,6 +112,7 @@ public class MegaEnemyTag : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        healthSlider.value = enemyHealth;
         if (playerObject != null)
         {
             if (!isHurt)
@@ -118,6 +126,16 @@ public class MegaEnemyTag : MonoBehaviour
             }
         }
         transform.position = new Vector3(transform.position.x, 1, transform.position.z);
+        if (enemyHealth <= 15)
+        {
+            healthFill.color = Color.yellowGreen;
+            halfHealthBleeding.gameObject.SetActive(true);
+        }
+        else
+        {
+            healthFill.color = Color.violet;
+            halfHealthBleeding.gameObject.SetActive(false);
+        }
     }
 
     public void GetHurt(float damage)

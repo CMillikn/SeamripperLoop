@@ -11,6 +11,7 @@ public class BulletBehavior : MonoBehaviour
     public GameObject bulletDeath;
     EnemyScript enemyTag;
     private MegaEnemyTag megaEnemyTag;
+    BossScript bossScript;
     public RangedWeapon WeaponType { get;  set; }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,6 +30,7 @@ public class BulletBehavior : MonoBehaviour
         StartCoroutine(HitThing());
         enemyTag = col.gameObject.GetComponent<EnemyScript>();
         megaEnemyTag = col.gameObject.GetComponent<MegaEnemyTag>();
+        bossScript = col.gameObject.GetComponent<BossScript>();
         if (enemyTag != null)
         {
             enemyTag.GetHurt(WeaponType.weaponDamage);
@@ -36,6 +38,10 @@ public class BulletBehavior : MonoBehaviour
         else if (megaEnemyTag != null)
         {
             megaEnemyTag.GetHurt(WeaponType.weaponDamage);
+        }
+        else if (bossScript != null)
+        {
+            bossScript.GetHurt(WeaponType.weaponDamage);
         }
     }
 

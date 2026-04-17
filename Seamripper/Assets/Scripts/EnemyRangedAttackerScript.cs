@@ -11,26 +11,42 @@ public class EnemyRangedAttackerScript : MonoBehaviour
     private float burstDowntime;
     public EnemyRanged enemyRanged;
     public MegaEnemyTag minibossTag;
+    public BossScript bossScript;
 
     void Start()
     {
-        isReloaded = true;  
-        reloadTime = enemyRanged.reloadTime;
-        rangedDamage = enemyRanged.weaponDamage;
-        burstCount = enemyRanged.burstAmount;
-        burstDowntime = enemyRanged.burstReload;
+        if (enemyRanged != null)
+        {
+            isReloaded = true;  
+            reloadTime = enemyRanged.reloadTime;
+            rangedDamage = enemyRanged.weaponDamage;
+            burstCount = enemyRanged.burstAmount;
+            burstDowntime = enemyRanged.burstReload;
+        }
     }
 
     void Update()
     {
-        if (minibossTag.isTutorialGuy == false)
+        if (minibossTag != null)
         {
-            if (isReloaded)
+            if (minibossTag.isTutorialGuy == false)
             {
-                StartCoroutine(Shoot());
+                if (isReloaded)
+                {
+                    StartCoroutine(Shoot());
+                }
             }
         }
-
+        else if (bossScript != null)
+        {
+            if (bossScript.isTutorialGuy == false)
+            {
+                if (isReloaded)
+                {
+                    StartCoroutine(Shoot());
+                }
+            }
+        }
     }
 
     IEnumerator Shoot()

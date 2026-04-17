@@ -1,10 +1,15 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
     public PlayerBodyManager playerBodyManager;
     public GameObject playerObject;
+    public int numberOfBossesKilled;
+    public int numberOfBossesInExistence;
+    public int bossStage = 1;
+    public bool canSpawnBosses;
     public static GameManager Instance
     {
         get
@@ -19,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        numberOfBossesKilled = 0;
         if (instance == null)
         {
             instance = this;
@@ -34,30 +40,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (bossStage != 1)
         {
-            playerBodyManager.ChangeMelee(playerBodyManager.MeleeArsenal[0]);
+            if (numberOfBossesInExistence == 0)
+            {
+                canSpawnBosses = true;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (numberOfBossesKilled == 6)
         {
-            playerBodyManager.ChangeMelee(playerBodyManager.MeleeArsenal[1]);
+            SceneManager.LoadScene(2);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            playerBodyManager.ChangeMelee(playerBodyManager.MeleeArsenal[2]);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            playerBodyManager.ChangeRanged(playerBodyManager.RangedArsenal[0]);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            playerBodyManager.ChangeRanged(playerBodyManager.RangedArsenal[1]);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            playerBodyManager.ChangeRanged(playerBodyManager.RangedArsenal[2]);
-        }*/
-        
     }
 }

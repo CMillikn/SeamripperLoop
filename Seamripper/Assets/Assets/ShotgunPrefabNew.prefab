@@ -192,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4033969159990235094, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.157
+      value: -0.121
       objectReference: {fileID: 0}
     - target: {fileID: 4033969159990235094, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
       propertyPath: m_LocalRotation.w
@@ -225,6 +225,10 @@ PrefabInstance:
     - target: {fileID: 4348861124752376055, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
       propertyPath: m_Name
       value: BulletPrefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194543478386796305, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
+      propertyPath: m_Mass
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6974151361014478582, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
@@ -331,6 +335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulletPrefab (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7194543478386796305, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6974151361014478582, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
     m_RemovedGameObjects: []
@@ -436,6 +444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulletPrefab (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7194543478386796305, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6974151361014478582, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
     m_RemovedGameObjects: []
@@ -507,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4033969159990235094, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.15700021
+      value: -0.12100001
       objectReference: {fileID: 0}
     - target: {fileID: 4033969159990235094, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
       propertyPath: m_LocalRotation.w
@@ -540,6 +552,10 @@ PrefabInstance:
     - target: {fileID: 4348861124752376055, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
       propertyPath: m_Name
       value: BulletPrefab (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194543478386796305, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
+      propertyPath: m_Mass
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6974151361014478582, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
@@ -645,6 +661,10 @@ PrefabInstance:
     - target: {fileID: 4348861124752376055, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
       propertyPath: m_Name
       value: BulletPrefab (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194543478386796305, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}
+      propertyPath: m_Mass
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6974151361014478582, guid: 512b38d9f0385f5adb4adc5971e92d41, type: 3}

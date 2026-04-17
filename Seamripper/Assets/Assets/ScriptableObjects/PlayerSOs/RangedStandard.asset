@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedWeapon
   weaponName: Basic Pistol
   weaponBurst: 1
-  weaponDamage: 2.5
+  weaponDamage: 3
   weaponBurstDowntime: 0
   weaponDowntime: 0.35
   weaponDurability: 10

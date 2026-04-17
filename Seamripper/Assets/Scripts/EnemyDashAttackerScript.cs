@@ -9,10 +9,14 @@ public class EnemyDashAttackerScript : MonoBehaviour
     public GameObject dashAttackInstance;
     public Rigidbody _thisRB;
     public MegaEnemyTag minibossTag;
+    public BossScript bossScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        dashAttack = enemyDash.dashObject;
+        if (enemyDash != null)
+        {
+            dashAttack = enemyDash.dashObject;
+        }
     }
 
     // Update is called once per frame
@@ -20,9 +24,19 @@ public class EnemyDashAttackerScript : MonoBehaviour
     {
         if (canDash)
         {
-            if (minibossTag.isTutorialGuy == false)
+            if (minibossTag != null)
             {
-                StartCoroutine(Dash());
+                if (minibossTag.isTutorialGuy == false)
+                {
+                    StartCoroutine(Dash());
+                }
+            }
+            else if (bossScript != null)
+            {
+                if (bossScript.isTutorialGuy == false)
+                {
+                    StartCoroutine(Dash());
+                }
             }
         }
     }

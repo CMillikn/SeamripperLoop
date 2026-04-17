@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedWeapon
   weaponName: Burst Rifle
   weaponBurst: 3
-  weaponDamage: 2.5
+  weaponDamage: 4
   weaponBurstDowntime: 0.1
-  weaponDowntime: 1
+  weaponDowntime: 0.6
   weaponDurability: 5
   bulletSpeed: 50
   weaponRicochet: 1

@@ -12,23 +12,40 @@ public class EnemyMeleeAttackerScript : MonoBehaviour
     public EnemyMelee enemyMelee;
     private EnemyMeleeObject enemyMeleeScript;
     public MegaEnemyTag minibossTag;
+    public BossScript bossScript;
 
     void Start()
     {
-        isReloaded = true;
-        reloadTime = enemyMelee.reloadTime;
-        meleeDamage = enemyMelee.weaponDamage;
-        meleeSize = enemyMelee.meleeSize;
-        meleePrefab = enemyMelee.meleePrefab;
+        if (enemyMelee != null)
+        {
+            isReloaded = true;
+            reloadTime = enemyMelee.reloadTime;
+            meleeDamage = enemyMelee.weaponDamage;
+            meleeSize = enemyMelee.meleeSize;
+            meleePrefab = enemyMelee.meleePrefab;
+        }
     }
 
     void Update()
     {
-        if (minibossTag.isTutorialGuy == false)
+        if (minibossTag != null)
         {
-            if (isReloaded)
+            if (minibossTag.isTutorialGuy == false)
             {
-                StartCoroutine(EnemySlice());
+                if (isReloaded)
+                {
+                    StartCoroutine(EnemySlice());
+                }
+            }
+        }
+        if (bossScript != null)
+        {
+            if (bossScript.isTutorialGuy == false)
+            {
+                if (isReloaded)
+                {
+                    StartCoroutine(EnemySlice());
+                } 
             }
         }
     }
