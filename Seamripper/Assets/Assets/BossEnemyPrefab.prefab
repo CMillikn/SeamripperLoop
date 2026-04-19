@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5366204d54a8445983dfca1d3d2df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossScript
-  enemyHealth: 120
+  enemyHealth: 90
   enemySpeed: 0.75
   isHurt: 0
   playerObject: {fileID: 0}

@@ -16,5 +16,5 @@ MonoBehaviour:
   meleePrefab: {fileID: 1932937504034815076, guid: 8f464a4d3e131287880c6912c215f96d, type: 3}
   weaponDamage: 3
   reloadTime: 2
-  meleeSize: 2
+  meleeSize: 2.5
   weaponVis: {fileID: 5905669993058502251, guid: 7b1201309f92d474ba79a29225cf99ea, type: 3}

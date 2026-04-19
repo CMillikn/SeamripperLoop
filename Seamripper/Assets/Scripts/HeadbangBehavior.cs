@@ -5,6 +5,7 @@ public class HeadbangBehavior : MonoBehaviour
 {
     EnemyScript enemyTag;
     MegaEnemyTag minibossTag;
+    private BossScript bossTag;
     public bool headbangCooldown;
     void Start()
     {
@@ -52,6 +53,25 @@ public class HeadbangBehavior : MonoBehaviour
                 else
                 {
                     minibossTag.GetHurt(15);
+                }
+            }
+        }
+
+        if (bossTag != null)
+        {
+            if (!headbangCooldown)
+            {
+                if (bossTag.enemyHealth - 15 <= 0)
+                {
+                    bodyMan.ChangeMelee(bodyMan.MeleeArsenal[bossTag.typeOfLimb]);
+                    bodyMan.ChangeRanged(bodyMan.RangedArsenal[bossTag.typeOfLimb]);
+                    bodyMan.ChangeDash(bodyMan.DashArsenal[bossTag.typeOfLimb]);
+                    bodyMan.ChangeWalk(bodyMan.WalkArsenal[bossTag.typeOfLimb]);
+                    bossTag.GetKilled();
+                }
+                else
+                {
+                    bossTag.GetHurt(15);
                 }
             }
         }

@@ -5200,7 +5200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9424dc6439a374d4dac325954b7e08ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MegaEnemyTag
-  enemyHealth: 50
+  enemyHealth: 30
   enemySpeed: 1
   isHurt: 0
   playerObject: {fileID: 0}

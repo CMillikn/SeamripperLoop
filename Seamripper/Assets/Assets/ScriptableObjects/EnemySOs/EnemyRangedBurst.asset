@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponName: Enemy Burst
   weaponDamage: 2
   reloadTime: 2
-  projectileSpeed: 6
+  projectileSpeed: 9
   burstAmount: 3
   burstReload: 0.3
   weaponVis: {fileID: -7818700081164973238, guid: 7b1201309f92d474ba79a29225cf99ea, type: 3}
