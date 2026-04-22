@@ -11,4 +11,5 @@ public class MeleeWeapon : ScriptableObject
     public float weaponRange;
     public GameObject weaponAttackObject;
     public Mesh weaponVis;
+    public GameObject weaponGetParticle;
 }

@@ -22,3 +22,4 @@ MonoBehaviour:
   weaponName: Broken Fallback Dash
   weaponVis: {fileID: 7094350676770450014, guid: 7b1201309f92d474ba79a29225cf99ea, type: 3}
   weaponDurability: 999999
+  weaponGetParticle: {fileID: 2469222991958717386, guid: 47b5ff714ed3434408791a3d63147d5d, type: 3}

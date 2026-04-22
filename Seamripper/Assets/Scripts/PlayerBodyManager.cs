@@ -23,12 +23,19 @@ public class PlayerBodyManager : MonoBehaviour
     public MeshFilter dashLegMesh;
     public MeshFilter walkLegMesh;
 
+    public float textHeight;
+
     public void ChangeMelee(MeleeWeapon melee)
     {
         meleeArmScript.meleeWeaponType = melee;
         meleeArmScript.weaponHealth = melee.weaponDurability;
         meleeArmScript.balanced = true;
         meleeArmMesh.mesh = melee.weaponVis;
+        if (melee.weaponGetParticle != null)
+        {
+            Instantiate(melee.weaponGetParticle, new Vector3(GameManager.Instance.playerObject.transform.position.x, textHeight, GameManager.Instance.playerObject.transform.position.z), Quaternion.identity);
+        }
+
     }
 
     public void ChangeRanged(RangedWeapon ranged)
@@ -37,6 +44,11 @@ public class PlayerBodyManager : MonoBehaviour
         rangedArmScript.weaponHealth = ranged.weaponDurability;
         rangedArmScript.reloaded = true;
         rangedArmMesh.mesh = ranged.weaponVis;
+        if (ranged.weaponGetParticle != null)
+        {
+            Instantiate(ranged.weaponGetParticle, new Vector3(GameManager.Instance.playerObject.transform.position.x, textHeight, GameManager.Instance.playerObject.transform.position.z), Quaternion.identity);
+        }
+
     }
 
     public void ChangeWalk(WalkWeapon walk)
@@ -45,6 +57,10 @@ public class PlayerBodyManager : MonoBehaviour
         walkLegScript.weaponHealth = walk.weaponDurability;
         walkLegScript.isDashing = false;
         walkLegMesh.mesh = walk.weaponVis;
+        if (walk.weaponGetParticle != null)
+        {
+            Instantiate(walk.weaponGetParticle, new Vector3(GameManager.Instance.playerObject.transform.position.x, textHeight, GameManager.Instance.playerObject.transform.position.z), Quaternion.identity);
+        }
     }
 
     public void ChangeDash(DashWeapon dash)
@@ -53,6 +69,10 @@ public class PlayerBodyManager : MonoBehaviour
         dashLegScript.weaponHealth = dash.weaponDurability;
         dashLegScript.isDashing = false;
         dashLegMesh.mesh = dash.weaponVis;
+        if (dash.weaponGetParticle != null)
+        {
+            Instantiate(dash.weaponGetParticle, new Vector3(GameManager.Instance.playerObject.transform.position.x, textHeight, GameManager.Instance.playerObject.transform.position.z), Quaternion.identity);
+        }
     }
 
     public void ReloadEverything()

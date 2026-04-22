@@ -24,3 +24,4 @@ MonoBehaviour:
   weaponRange: 0.8
   weaponAttackObject: {fileID: 7444404128372394880, guid: c58fda44398032c64808b7b4c578e177, type: 3}
   weaponVis: {fileID: -1866452790991680142, guid: 7b1201309f92d474ba79a29225cf99ea, type: 3}
+  weaponGetParticle: {fileID: 7928562955284027058, guid: 44801c67cb0ba5c43aef766446b75362, type: 3}

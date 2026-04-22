@@ -22,3 +22,4 @@ MonoBehaviour:
   weaponName: Rapid Dash
   weaponVis: {fileID: 723878883474082685, guid: 7b1201309f92d474ba79a29225cf99ea, type: 3}
   weaponDurability: 5
+  weaponGetParticle: {fileID: 1418427361281386636, guid: 858b78694a7349c43bae2684cbeb15e7, type: 3}

@@ -13,4 +13,5 @@ public class DashWeapon : ScriptableObject
     public string weaponName;
     public Mesh weaponVis;
     public float weaponDurability;
+    public GameObject weaponGetParticle;
 }
