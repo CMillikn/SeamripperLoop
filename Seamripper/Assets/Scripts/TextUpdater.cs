@@ -25,9 +25,9 @@ public class TextUpdater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        meleeText.text = $"Current Melee: {meleeArmScript.meleeWeaponType.weaponName}";
-        rangedText.text = $"Current Ranged: {rangedArmScript.rangedWeaponType.weaponName}";
-        walkText.text = $"Current Walker: {walkLegScript.walkWeaponType.weaponName}";
-        dashText.text = $"Current Dasher: {dashLegScript.dashWeaponType.weaponName}";
+        meleeText.text = $"Melee: {meleeArmScript.meleeWeaponType.weaponName}";
+        rangedText.text = $"Ranged: {rangedArmScript.rangedWeaponType.weaponName}";
+        walkText.text = $"Walker: {walkLegScript.walkWeaponType.weaponName}";
+        dashText.text = $"Dasher: {dashLegScript.dashWeaponType.weaponName}";
     }
 }
