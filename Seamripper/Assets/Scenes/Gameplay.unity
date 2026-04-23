@@ -3498,7 +3498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2540443776477245306, guid: cffc645121f870c70bae0bc4fbad1f84, type: 3}
       propertyPath: enemyHealth
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2540443776477245306, guid: cffc645121f870c70bae0bc4fbad1f84, type: 3}
       propertyPath: isTutorialGuy
